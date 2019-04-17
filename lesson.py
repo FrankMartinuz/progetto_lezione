@@ -11,15 +11,12 @@ boolD = True
 
 class Lesson:
 
-    def __init__(self, idT=1, title="titolo", desc="descrizione", text="testo", link=["link1", "link2", "link3"]):
-        self.__id_teacher = idT
-        self.__id_lesson = 0
+    def __init__(self, title="titolo", desc="descrizione", text="testo", link=["link1"], idLesson=-1):
+        self.__id_lesson = idLesson
         self.__title = title
         self.__description = desc
         self.__lesson_text = text
         self.__link = link
-
-        self.createLesson()
 
     def __str__(self):
         return [self.__id_teacher, self.__id_lesson, self.__description, self.__link]

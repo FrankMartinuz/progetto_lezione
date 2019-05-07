@@ -6,7 +6,7 @@ class Teacher(User):
     def __init__(self):
         User.__init__(self)
         self.__subject = None
-        self.__id_teacher = str(self._first_name + self._second_name)
+        self.__id_teacher = str(self._first_name + self._last_name)
 
     def chooseSubject(self, subject):
         self.__subject = subject

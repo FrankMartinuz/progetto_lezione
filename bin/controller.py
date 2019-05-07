@@ -2,7 +2,7 @@ from bin.view import View
 import tkinter as tk
 
 """
-classe controller per esecuzione grafica
+classe controller per esecuzione grafica 2
 """
 
 

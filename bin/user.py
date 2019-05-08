@@ -9,5 +9,5 @@ class User(ABC):
         self._password = None
 
     @abstractmethod
-    def chooseSubject(self, subject):
+    def viewSubject(self, subject):
         self.__subject = subject

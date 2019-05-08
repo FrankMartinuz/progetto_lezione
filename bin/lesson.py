@@ -58,7 +58,7 @@ class Lesson:
         for i in range(len(self.__link)):
             xml.SubElement(link, "L" + str(i)).text = self.__link[i]
         tree = xml.ElementTree(root)
-        tree.write("lesson" + str(self.__id_lesson) + ".xml")
+        tree.write("..\Lessons\lesson" + str(self.__id_lesson) + ".xml")
 
     def showLesson(self):
         """

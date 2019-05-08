@@ -1,4 +1,6 @@
+from bin.controller import Controller
 from bin.user import User
+from bin.view_subject import View_subject
 
 
 class Student(User):
@@ -7,9 +9,16 @@ class Student(User):
         self.__class = None
         self.__id_student = None
 
-    def chooseSubject(self, entry_first_name, entry_last_name):
+    def viewSubject(self, entry_first_name, entry_last_name, controller):
         self.set_first_name(entry_first_name.get())
         self.set_last_name(entry_last_name.get())
+
+        "stop della finestra di login"
+        controller.stop()
+
+        "istanza un nuovo controller per aprire una nuova finestra"
+        controller_view_subject = Controller(View_subject)
+        controller_view_subject.run()
 
 
     def doQuiz(self):
@@ -25,3 +34,7 @@ class Student(User):
 if __name__ == "__main__":
     a = Student()
     print(a.__dict__)
+
+
+
+

@@ -1,7 +1,7 @@
 # --IMPORT
-import time
 
 from bin.controller import Controller
+from bin.view_login import View
 
 # --VARIABLES
 
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     if boolD:
         print("Started")
 
-    controller = Controller()
+    controller = Controller(View)
     controller.run()
 
 

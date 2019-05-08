@@ -15,6 +15,8 @@ class Controller(object):
         self.__root.title("Lezioni tra pari")
         self.__root.mainloop()
 
+    def stop(self):
+        self.__root.destroy()
 
 if __name__ == '__main__':
     c = Controller()

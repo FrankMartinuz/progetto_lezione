@@ -1,6 +1,6 @@
 # --IMPORT
+import time
 
-from tkinter import *
 from bin.controller import Controller
 
 # --VARIABLES
@@ -17,6 +17,7 @@ if __name__ == "__main__":
 
     controller = Controller()
     controller.run()
+
 
     if boolD:
         print("Ended")

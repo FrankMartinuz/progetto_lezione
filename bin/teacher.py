@@ -1,12 +1,12 @@
-from config.user import Lesson
-from config.user import User
+# from bin.user import Lesson
+from bin.user import User
 
 
 class Teacher(User):
     def __init__(self):
         User.__init__(self)
         self.__subject = None
-        self.__id_teacher = str(self._first_name + self._last_name)
+        self.__id_teacher = None
 
     def chooseSubject(self, subject):
         self.__subject = subject

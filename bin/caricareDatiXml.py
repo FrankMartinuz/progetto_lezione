@@ -1,6 +1,6 @@
 import xml.etree as xml
 
-from lesson import Lesson
+from bin.lesson import Lesson
 
 
 def getParam(tag):
@@ -13,11 +13,10 @@ def getParam(tag):
     else:
         return tree.find(tag).text
 
-
-f = open('lesson5.xml', 'r')
-tree = xml.ElementTree.parse(f)
-
 if __name__ == "__main__":
+    numLesson = input("Inserire il numero della lezione:")
+    f = open("..\Lessons\lesson" + str(numLesson) + ".xml", 'r')
+    tree = xml.ElementTree.parse(f)
     for node in tree.getiterator('lesson'):
         id = node.attrib.get('id')
     l = Lesson(getParam("title"), getParam("description"), getParam("text"), getParam("link"), id)

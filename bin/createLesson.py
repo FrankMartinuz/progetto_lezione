@@ -1,7 +1,15 @@
 from bin.lesson import Lesson
+import xml.etree.ElementTree as xml
 
-#def loadId():
-
+def loadId():
+    tree = xml.parse("..\config\config.xml")
+    root = tree.getroot()
+    for tag in root.iter("idLesson"):
+        id = int(tag.attrib.get("id"))
+        print(id)
+        tag.set("id","" + str(id+1))
+    tree.write('..\config\config.xml')
+    return id
 
 if __name__ == "__main__":
     title = input("Inserire titiolo della lezione:")
@@ -12,7 +20,7 @@ if __name__ == "__main__":
     while (n != ""):
         n = input("Inserire eventuali link per la lezione:")
         link.append(n)
-
-    l = Lesson(title, desc, text, link)
+    id = loadId()
+    l = Lesson(title, desc, text, link, id)
     l.createLesson()
     print(l.showLesson())
